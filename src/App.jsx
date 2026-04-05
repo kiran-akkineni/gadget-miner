@@ -552,7 +552,7 @@ Respond ONLY with valid JSON. No markdown, no backticks, no explanation. Just a 
 
     try {
       // Batch queries into groups to stay efficient
-      const batchSize = 6;
+      const batchSize = 3;
       let allRawIdeas = [];
 
       for (let i = 0; i < searchQueries.length; i += batchSize) {
@@ -609,7 +609,7 @@ Find 4-6 distinct, viable gadget ideas from these searches. Each must be a physi
 
         // Small delay between batches
         if (i + batchSize < searchQueries.length) {
-          await new Promise(r => setTimeout(r, 1500));
+          await new Promise(r => setTimeout(r, 15000));
         }
       }
 
